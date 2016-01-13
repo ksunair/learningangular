@@ -1,11 +1,10 @@
 var myApp = angular.module('app',[]);
 
 myApp.service('userService', function ($http) {
-    var model = this;
     var URLS = {
         USER: 'http://localhost:8000/api/users'
     };
-    model.getUsers = function () {
+    this.getUsers = function () {
         return $http.get(URLS.USER);
     }
 });
